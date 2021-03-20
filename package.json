@@ -11,7 +11,9 @@
     "chrome-aws-lambda": "^7.0.0",
     "classnames": "^2.2.6",
     "js-cookie": "^2.2.1",
+    "mongodb": "^3.6.5",
     "next": "10.0.6",
+    "next-auth": "^3.13.2",
     "puppeteer-core": "^7.1.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"

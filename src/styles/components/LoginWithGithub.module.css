@@ -1,0 +1,75 @@
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background: var(--blue);
+    padding: 2.5rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .overlay .container {
+    width: 992px;
+    height: 430px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .overlay .container form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .overlay .container form .img {
+    width: 100%;
+  }
+  .overlay .container form div {
+    width: 100%;
+  }
+  .overlay .container form div h1 {
+    color: var(--white);
+    font-size: 3rem;
+  }
+  .overlay .container form div .github a {
+    margin: 2rem 0;
+    padding: 1rem;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #4953b8 0%, rgba(73, 83, 184, 0.2) 100%);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+  }
+  .overlay .container form div .github span {
+    margin-right: 1rem;
+    display: flex;
+  }
+  .overlay .container form div .github span img {
+    color: var(--white);
+    width: 2.2rem;
+  }
+  .overlay .container form div .github p {
+    color: #b2b9ff;
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 768px) {
+    .overlay {
+      padding: 2.5rem 1rem;
+    }
+    .overlay .container {
+      justify-content: flex-start;
+    }
+    .overlay .container form {
+      width: 70%;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .overlay .container form {
+      width: 100%;
+    }
+    .overlay .container form div .inputAndButton input {
+      width: 80%;
+    }
+    .overlay .container form div .inputAndButton button {
+      width: 20%;
+    }
+  }

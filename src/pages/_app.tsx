@@ -1,10 +1,13 @@
-import { AppProps } from 'next/app'
+import { Provider } from 'next-auth/client';
 
-import '../styles/globals.css'
+import "../styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
+  const {session} = pageProps;
   return (
-    <Component {...pageProps} />
-  )
+    <Provider options={{site: process.env.SITE}} session={session}>
+      <Component {...pageProps} />
+    </Provider>
+  );
 }
-
+export default MyApp

@@ -1,20 +1,24 @@
-import { useChallenges } from '../hooks/useChallenges';
+import { useContext } from "react";
+import { ChallengesContext } from "../context/ChallengesContext";
+import {useSession} from "next-auth/client";
+import styles from "../styles/components/Profile.module.css";
 
-import styles from '../styles/components/Profile.module.css';
-
-export function Profile() {
-  const { level } = useChallenges();
-
-  return (
-    <div className={styles.profileContainer}>
-      <img src="https://github.com/diego3g.png" alt="Diego Fernandes "/>
-      <div>
-        <strong>Diego Fernandes</strong>
-        <p>
-          <img src="icons/level.svg" alt="Level" />
-          Level {level}
-        </p>
-      </div>
-    </div>
-  );
+function Profile(){
+    const {level} = useContext(ChallengesContext);
+    const [session] = useSession();
+    
+    return(
+        <div className={styles.profileContainer}>
+            <img src={`${session.user.image}`} alt={`${session.user.name} icon`} />
+            <div>
+                <strong>{session.user.name}</strong>
+                <p>
+                    <img src="icons/level.svg" alt="Level icon" />
+                    Nivel {level}
+                </p>
+            </div>
+        </div>
+    );
 }
+
+export default Profile;
